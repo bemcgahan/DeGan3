@@ -1,6 +1,7 @@
 //author: Brenna DeGan
 //date: 9/16/2018
-//description:
+//description: Building on assignment two and animating the fox. 15/15 points. Type 'n' for night 
+// and 'd' for day. Uniform variable is theta
 
 
 "use strict";
