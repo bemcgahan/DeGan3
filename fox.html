@@ -14,8 +14,9 @@ void
 main()
 {
     float s = sin( theta );
-    float c = cos( theta );
+	float c = cos( theta );
 
+    
     gl_Position.x = -s * vPosition.y + c * vPosition.x;
     gl_Position.y =  s * vPosition.x + c * vPosition.y;
     gl_Position.z = 0.0;
@@ -45,10 +46,14 @@ main()
 
 <body>
 <p>Press "d" for daytime and "n" for nighttime.</p>
+
+<!--slider for speed -->
 <div>
 	Rotation Speed <input id="slider" type="range"
 	min="0.0" max="0.2" step="0.01" value="0.0"/>
 </div>
+
+<!-- menu to change color of fox -->
 <select id="Controls" size="4">
     <option value="0">Brown</option>
     <option value="1">Blue</option>
@@ -56,6 +61,7 @@ main()
     <option value="3">Random</option>
 
 </select>
+<!--press button to change direction-->
 <button id="Direction">Change Direction</button>
 <canvas id="gl-canvas" width="512" height="512">
 Oops ... your browser doesn't support the HTML5 canvas element

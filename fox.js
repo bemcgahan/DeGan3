@@ -9,9 +9,11 @@
 var gl;
 var points;
 
+//for openning animation
 var numPoints = 51
 var movePoints = 0;
 
+//for rotaing fox
 var theta = 0.0;
 var speed = 0.0;
 var thetaLoc;
@@ -178,6 +180,7 @@ window.onload = function init()
     // Initialize event handler (menu)
     document.getElementById("Controls" ).onclick = function(event) {
         switch( event.target.index ) {
+            //brown
             case 0:
                 var colors = [
                     vec3(0.42, 0.26, 0.15), //body triangle
@@ -242,6 +245,7 @@ window.onload = function init()
                     gl.enableVertexAttribArray( vColor );
 
                 break;
+            //blue
             case 1:
                 var colors = [
                     vec3(0.2, 0.2, .8), //body triangle
@@ -306,6 +310,7 @@ window.onload = function init()
                     gl.enableVertexAttribArray( vColor );
 
                 break;
+            //green
             case 2:
                 var colors = [
                     vec3(0.18, 0.3, .18), //body triangle
@@ -370,6 +375,7 @@ window.onload = function init()
                     gl.enableVertexAttribArray( vColor );
 
                 break;
+            //random
              case 3:
                 var colors = [
                     vec3(Math.random(), Math.random(), Math.random()), //body triangle
@@ -453,11 +459,12 @@ window.onload = function init()
         }
     };
 
-    //slider
+    //slider for speed of rotation
     document.getElementById("slider").onchange=function(event){
         speed = parseFloat(event.target.value);
     };
 
+    //button that changes direction of rotation
     document.getElementById("Direction").onclick = function(){
         console.log("pressed button");
         direction = !direction;
@@ -482,6 +489,7 @@ function render() {
     {
         theta -= speed;
     }
+    //uniform variable 
     gl.uniform1f(thetaLoc, theta);
     
     window.requestAnimFrame(render);
